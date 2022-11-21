@@ -19,7 +19,7 @@ const IndexPage = () => {
     <main style={pageStyles}>
       <h1 style={headingStyles}>
         Congratulations
-        <span style={headingAccentStyles}>— you just made it 🎉🎉🎉</span>
+        <span style={headingAccentStyles}>— you just made it. 🎉🎉🎉</span>
       </h1>
     </main>
   )
