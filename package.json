@@ -1,0 +1,24 @@
+{
+  "name": "dinu-dev",
+  "version": "1.0.0",
+  "private": true,
+  "description": "dinu-dev",
+  "author": "Dinu Rodnitchi",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.13.2",
+    "gatsby-plugin-postcss": "^6.13.1",
+    "postcss": "^8.4.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
