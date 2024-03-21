@@ -75,14 +75,36 @@ const IndexPage = ({ data }) => {
 
           </div>
         </div>
-        <div className="row">
-          <div className="col">
+        <div className="footer-wrapper">
+          <div className="footer">
             <h2>Get in touch</h2>
-            <div>You can mail me at <u>contact@dinu.dev</u> or <u>rodnitchi@gmail.com</u>.</div>
-            <ul className="links">
-              <li><a href="https://www.linkedin.com/in/dinu-rodnitchi">LinkedIn</a></li>
-              <li><a href="https://github.com/dinu-dev">Github</a></li>
-            </ul>
+            <div>Email: <u>contact@dinu.dev</u> or <u>rodnitchi@gmail.com</u>.</div>
+            <br />
+            <div>Phone: <u>+37378582197</u></div>
+
+            <form className="contact-form" name="contact" netlify>
+              <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="8" required></textarea>
+              </div>
+              <div className="actions">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+
+            <div className="links">
+              <a href="https://www.linkedin.com/in/dinu-rodnitchi">LinkedIn</a>
+              <a href="https://github.com/dinu-dev">Github</a>
+            </div>
+
           </div>
         </div>
       </div>

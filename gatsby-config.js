@@ -57,7 +57,7 @@ module.exports = {
         siteSpeedSampleRate: 10,
         cookieDomain: "dinu.dev",
         // defaults to false
-        enableWebVitalsTracking: true,
+        enableWebVitalsTracking: false,
       },
     },
   ]
