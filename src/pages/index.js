@@ -5,6 +5,28 @@ import { graphql } from 'gatsby';
 import { SEO } from "../components/seo";
 
 const IndexPage = ({ data }) => {
+
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const myForm = event.nativeEvent.target;
+    const formData = new FormData(myForm);
+
+    console.log('my form data', new URLSearchParams(formData).toString());
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        alert("Message sent successfully!");
+        myForm.reset();
+      })
+      .catch((error) => alert(error));
+  };
+
   return (
     <Layout>
       <div className="container">
@@ -20,8 +42,8 @@ const IndexPage = ({ data }) => {
               <p>What sets me apart is not just my technical expertise, but my ability to communicate effectively with clients and team members, translating complex technical challenges into manageable solutions. I am a proactive problem-solver, constantly exploring new technologies and methodologies to enhance project outcomes. My commitment to excellence and continuous learning has enabled me to contribute to the success of diverse projects, ranging from small business websites to large-scale digital platforms.</p>
               <h2>My Employment History</h2>
               <Accordion allowZeroExpanded>
-                {data.allEmploymentHistory.edges.map(item => (
-                  <AccordionItem>
+                {data.allEmploymentHistory.edges.map((item, index) => (
+                  <AccordionItem key={index}>
                     <AccordionItemHeading>
                       <AccordionItemButton>
                         <div className="title-contents">{item.node.frontmatter.title} - {item.node.frontmatter.company}<i>{item.node.frontmatter.date}</i></div>
@@ -34,8 +56,8 @@ const IndexPage = ({ data }) => {
                 ))}
               </Accordion>
               <h2>Education</h2>
-              {data.allEducation.edges.map(item => (
-                <div className="title-contents">{item.node.frontmatter.title} - {item.node.frontmatter.institution}<i>, {item.node.frontmatter.date}</i></div>
+              {data.allEducation.edges.map((item, index) => (
+                <div key={index} className="title-contents">{item.node.frontmatter.title} - {item.node.frontmatter.institution}<i>, {item.node.frontmatter.date}</i></div>
               ))}
 
               <h2>Recent accomplishments and certifications</h2>
@@ -82,18 +104,18 @@ const IndexPage = ({ data }) => {
             <br />
             <div>Phone: <u>+37378582197</u></div>
 
-            <form className="contact-form" name="contact" etlify-honeypot="bot-field" data-netlify="true">
+            <form className="contact-form" name="contact" method="POST" etlify-honeypot="bot-field" data-netlify="true" onSubmit={e => {handleSubmit(e)}}>
               <input type="hidden" name="bot-field" />
               <div>
-                <label for="name">Your Name:</label>
+                <label htmlFor="name">Your Name:</label>
                 <input type="text" id="name" name="name" required />
               </div>
               <div>
-                <label for="email">Your Email:</label>
+                <label htmlFor="email">Your Email:</label>
                 <input type="email" id="email" name="email" required />
               </div>
               <div>
-                <label for="message">Message:</label>
+                <label htmlFor="message">Message:</label>
                 <textarea id="message" name="message" rows="8" required></textarea>
               </div>
               <div className="actions">
