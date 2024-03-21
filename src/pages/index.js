@@ -82,7 +82,8 @@ const IndexPage = ({ data }) => {
             <br />
             <div>Phone: <u>+37378582197</u></div>
 
-            <form className="contact-form" name="contact" netlify>
+            <form className="contact-form" name="contact" etlify-honeypot="bot-field" data-netlify="true">
+              <input type="hidden" name="bot-field" />
               <div>
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required />
