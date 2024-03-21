@@ -1,0 +1,139 @@
+@import "../../postcss/_variables.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  p,
+  ul,
+  .title-contents {
+    color: var(--text-color);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--header-color);
+  }
+  ul {
+    padding-left: 20px;
+    list-style: square;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: var(--header-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 20px 0;
+
+  h1.title {
+    margin: 0;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: var(--title-color);
+    }
+  }
+
+  .menu {
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 0 6px;
+        a {
+          color: white;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.accordion {
+  .accordion__item {
+    margin-bottom: 5px;
+    .accordion__heading {
+      cursor: pointer;
+      min-height: 20px;
+      background: #f5f4f4;
+      color: #262626;
+      padding: 10px;
+    }
+  }
+}
+
+.accordion__button {
+  width: auto !important;
+  display: flex;
+  .title-contents {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  .col {
+    padding-right: 15px;
+    padding-left: 15px;
+    &.col-left {
+      width: 75%;
+    }
+    &.col-right {
+      width: calc(25% - 60px);
+    }
+
+    @media only screen and (max-width: 600px) {
+      &.col-left {
+        width: 100%;
+      }
+      &.col-right {
+        width: 100%;
+      }
+    }
+  }
+}
+
+ul.list {
+  list-style: none;
+  padding: 0;
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.links {
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
