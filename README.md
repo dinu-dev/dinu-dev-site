@@ -7,6 +7,9 @@
   Gatsby Minimal Starter
 </h1>
 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a75d72dc-1d6e-41f1-b070-5bfc645ff310/deploy-status)](https://app.netlify.com/sites/capable-tapioca-85db10/deploys)
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
