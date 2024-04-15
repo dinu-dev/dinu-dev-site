@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
               <p>I am well-versed in all phases of the development lifecycle, from initial concept through to deployment and maintenance, ensuring that every project I undertake is scalable, secure, and SEO-friendly.</p>
 
               <p>What sets me apart is not just my technical expertise, but my ability to communicate effectively with clients and team members, translating complex technical challenges into manageable solutions. I am a proactive problem-solver, constantly exploring new technologies and methodologies to enhance project outcomes. My commitment to excellence and continuous learning has enabled me to contribute to the success of diverse projects, ranging from small business websites to large-scale digital platforms.</p>
-              <h2>My Employment History</h2>
+              {/* <h2>My Employment History</h2>
               <Accordion allowZeroExpanded>
                 {data.allEmploymentHistory.edges.map((item, index) => (
                   <AccordionItem key={index}>
@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => {
                     </AccordionItemPanel>
                   </AccordionItem>
                 ))}
-              </Accordion>
+              </Accordion> */}
               <h2>Education</h2>
               {data.allEducation.edges.map((item, index) => (
                 <div key={index} className="title-contents">{item.node.frontmatter.title} - {item.node.frontmatter.institution}<i>, {item.node.frontmatter.date}</i></div>
@@ -99,7 +99,7 @@ const IndexPage = ({ data }) => {
         </div>
         <div className="footer-wrapper">
           <div className="footer">
-            <h2>Get in touch</h2>
+            {/* <h2>Get in touch</h2>
             <div>Email: <u>contact@dinu.dev</u> or <u>rodnitchi@gmail.com</u>.</div>
             <br />
             <div>Phone: <u>+37378582197</u></div>
@@ -123,7 +123,7 @@ const IndexPage = ({ data }) => {
               <div className="actions">
                 <button type="submit">Send</button>
               </div>
-            </form>
+            </form> */}
 
             <div className="links">
               <a href="https://www.linkedin.com/in/dinu-rodnitchi">LinkedIn</a>
